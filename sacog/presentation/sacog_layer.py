@@ -159,6 +159,33 @@ class SacogLayerConfigurationFixture(LayerConfigurationFixture):
             ),
             LayerConfiguration(
                 library_keys=[LayerLibraryKey.APPLICATION],
+                db_entity_key=DbEntityKey.SWMM,
+                layer_style=dict(
+                    geometry_type=GeometryTypeKey.POLYGON,
+                    style_attributes=[
+                        dict(
+                            attribute='total_swmm_runoff',
+                            style_type=StyleTypeKey.QUANTITATIVE,
+                            style_value_contexts=[
+                                StyleValueContext(value=0, symbol='=', style=Style(polygon_fill='#909090')),
+                                StyleValueContext(value=0, symbol='>', style=Style(polygon_fill='#B3D8FF')),
+                                StyleValueContext(value=40, symbol='>', style=Style(polygon_fill='#9FC6F0')),
+                                StyleValueContext(value=60, symbol='>', style=Style(polygon_fill='#8BB5E1')),
+                                StyleValueContext(value=80, symbol='>', style=Style(polygon_fill='#77A4D2')),
+                                StyleValueContext(value=120, symbol='>', style=Style(polygon_fill='#6392C3')),
+                                StyleValueContext(value=160, symbol='>', style=Style(polygon_fill='#6392C3')),
+                                StyleValueContext(value=200, symbol='>', style=Style(polygon_fill='#5081B5')),
+                                StyleValueContext(value=250, symbol='>', style=Style(polygon_fill='#3C70A6')),
+                                StyleValueContext(value=300, symbol='>', style=Style(polygon_fill='#285E97')),
+                                StyleValueContext(value=350, symbol='>', style=Style(polygon_fill='#144D88')),
+                                StyleValueContext(value=400, symbol='>', style=Style(polygon_fill='#013C7A')),
+                            ]
+                        )
+                    ]
+                )
+            ),
+            LayerConfiguration(
+                library_keys=[LayerLibraryKey.APPLICATION],
                 db_entity_key=DbEntityKey.VMT,
                 layer_style=dict(
                     geometry_type=GeometryTypeKey.POLYGON,

@@ -296,6 +296,24 @@ class SacogResultConfigurationFixtures(ResultConfigurationFixture):
                     sort_priority=ResultSort.FUTURE
                 ),
 
+                ResultConfiguration(
+                    result_type='analytic_result',
+                    library_keys=[ResultLibraryKey.SWMM],
+                    result_db_entity_key=ResultKey.SWMM,
+                    source_db_entity_key=DbEntityKey.SWMM,
+
+                    name='SWMM',
+                    attributes=['total_swmm_runoff'],
+                    db_column_lookup=dict(
+                        total_swmm_runoff='total_swmm_runoff',
+                    ),
+                    labels=['total_swmm_runoff'],
+                    stackable=False,
+                    is_stacked=False,
+                    create_query=self.simple_aggregate,
+                    sort_priority=ResultSort.FUTURE
+                ),
+
                 # Aggregate result from the Analytic Bars
                 ResultConfiguration(
                     result_type='analytic_bars',
@@ -379,6 +397,24 @@ class SacogResultConfigurationFixtures(ResultConfigurationFixture):
                     stackable=False,
                     is_stacked=False,
                     create_query=lambda result_config: 'SELECT SUM(residential_water_use) / 325851.431889 * 1349.0 as residential_water_use__sum, SUM(commercial_water_use) / 325851.431889 * 1349.0 as commercial_water_use__sum from %({0})s'.format(DbEntityKey.WATER),
+                    sort_priority=ResultSort.BASE
+                 ),
+
+                ResultConfiguration(
+                    result_type='bar_graph',
+                    library_keys=[ResultLibraryKey.SWMM],
+                    result_db_entity_key=ResultKey.SWMM_TOTAL,
+                    source_db_entity_key=DbEntityKey.SWMM,
+
+                    name='SWMM Runoff',
+                    attributes=['total_swmm_runoff'],
+                    db_column_lookup=dict(
+                        total_swmm_runoff='total_swmm_runoff',
+                    ),
+                    labels=['Total SWMM Runoff'],
+                    stackable=False,
+                    is_stacked=False,
+                    create_query=self.simple_aggregate,
                     sort_priority=ResultSort.BASE
                  ),
 

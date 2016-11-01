@@ -10,7 +10,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
 # Public License v3 for more details; see <http://www.gnu.org/licenses/>.
 
-from footprint.client.configuration.sacog.built_form.sacog_built_form import RUCS_CROPTYPE_COLORS
+from footprint.client.configuration.default.built_form.default_croptype import RUCS_CROPTYPE_COLORS
+
 from footprint.main.models.built_form.placetype import Placetype
 from footprint.main.models.built_form.placetype_component_percent import PlacetypeComponentPercent
 from footprint.main.models.built_form.primary_component import PrimaryComponent

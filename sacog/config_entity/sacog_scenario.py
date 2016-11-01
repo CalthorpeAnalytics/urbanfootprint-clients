@@ -16,6 +16,7 @@ from footprint.main.models.analysis.public_health_features.ph_block_group_outcom
     PhBlockGroupOutcomesFeature
 from footprint.main.models.analysis.vmt_features.vmt_variables_feature import VmtVariablesFeature
 from footprint.main.models.analysis.water_feature import WaterFeature
+from footprint.main.models.analysis.swmm_feature import SwmmFeature
 from footprint.main.models.analysis.energy_feature import EnergyFeature
 from footprint.main.models.analysis.vmt_features.vmt_feature import VmtFeature
 from footprint.main.models import AgricultureFeature
@@ -230,6 +231,26 @@ class SacogScenarioFixture(ScenarioFixture):
                         name='Water Demand Output',
                         feature_class_configuration=FeatureClassConfiguration(
                             abstract_class=WaterFeature,
+                            import_from_db_entity_key=DbEntityKey.BASE_CANVAS,
+                            empty_table=True
+                        ),
+                        feature_behavior=FeatureBehavior(
+                            behavior=get_behavior('internal_analysis'),
+                            intersection=AttributeIntersection(from_attribute='id', to_attribute='id')
+                        ),
+                        _categories=[Category(
+                            key=DbEntityCategoryKey.KEY_CLASSIFICATION,
+                            value=DbEntityCategoryKey.ANALYSIS_RESULTS
+                        )]
+                    )
+                ),
+                dict(
+                    class_scope=Scenario,
+                    value=DbEntity(
+                        key=DbEntityKey.SWMM,
+                        name='SWMM Output',
+                        feature_class_configuration=FeatureClassConfiguration(
+                            abstract_class=SwmmFeature,
                             import_from_db_entity_key=DbEntityKey.BASE_CANVAS,
                             empty_table=True
                         ),

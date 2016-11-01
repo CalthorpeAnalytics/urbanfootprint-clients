@@ -96,6 +96,18 @@ class SacogAnalysisModuleFixture(AnalysisModuleFixture):
                 ),
                 dict(
                     class_scope=Scenario,
+                    key=AnalysisModuleKey.SWMM,
+                    name='SWMM Module',
+                    analysis_tools=[
+                        dict(
+                            class_name=uf_analysis_module('swmm_module.swmm_updater_tool.SwmmUpdaterTool'),
+                            key=AnalysisToolKey.SWMM_UPDATER_TOOL,
+                            behavior=get_behavior('analysis_tool')
+                        )
+                    ]
+                ),
+                dict(
+                    class_scope=Scenario,
                     key=AnalysisModuleKey.VMT,
                     name='Vehicle Miles Traveled',
                     analysis_tools=[

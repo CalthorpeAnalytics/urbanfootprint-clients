@@ -36,7 +36,7 @@ class DefaultResultConfigurationFixtures(DefaultMixin, ResultConfigurationFixtur
                 name='{0} %s Result Library' % capitalize(result_library_key),
                 description='The %s result library for {0}' % capitalize(result_library_key)
             ),
-            [ResultLibraryKey.DEFAULT, ResultLibraryKey.APPLICATION, ResultLibraryKey.WATER, ResultLibraryKey.ENERGY, ResultLibraryKey.VMT,
+            [ResultLibraryKey.DEFAULT, ResultLibraryKey.APPLICATION, ResultLibraryKey.WATER, ResultLibraryKey.SWMM, ResultLibraryKey.ENERGY, ResultLibraryKey.VMT,
              ResultLibraryKey.FISCAL, ResultLibraryKey.AGRICULTURE_ANALYSIS, ResultLibraryKey.PUBLIC_HEALTH]
         ))
 
@@ -191,6 +191,17 @@ class DefaultResultConfigurationFixtures(DefaultMixin, ResultConfigurationFixtur
                     'colorRange': ['#05B8CC', '#00688B']
                 },
                 'description': 'water colors'}
+        ),
+
+        Medium.objects.update_or_create(
+            key=ResultMediumKey.SWMM_TOTAL,
+            name=ResultMediumKey.SWMM_TOTAL,
+            defaults={
+                'content_type': ContentTypeKey.PYTHON,
+                'content': {
+                    'colorRange': ['#05B8CC', '#00688B']
+                },
+                'description': 'swmm colors'}
         ),
 
         Medium.objects.update_or_create(
