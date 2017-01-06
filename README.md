@@ -25,4 +25,4 @@ you would clone *your* forked `urbanfootprint-configuration` repository like thi
 
 Instructions for how to build and populate a base base schema are available in the [UF user guide](http://urbanfootprint-v1.readthedocs.io/en/latest/data_preparation/).
 
-Copyright (C) 2016 Calthorpe Analytics
+Copyright (C) 2017 Calthorpe Analytics
