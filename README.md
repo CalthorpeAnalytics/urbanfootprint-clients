@@ -1,3 +1,14 @@
+---
+
+# DEPRECATED REPO
+
+### NOTE
+
+This repository is deprecated as of [PR 2 in the main urbanfootprint repo](CalthorpeAnalytics/urbanfootprint/pull/2)
+
+---
+
+
 # UrbanFootprint Client Configuration
 
 This repository is included as a [git
