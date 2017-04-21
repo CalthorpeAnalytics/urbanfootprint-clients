@@ -4,7 +4,7 @@
 
 ### NOTE
 
-This repository is deprecated as of [PR 2 in the main urbanfootprint repo](CalthorpeAnalytics/urbanfootprint/pull/2)
+This repository is deprecated as of [PR 2 in the main urbanfootprint repo](https://github.com/CalthorpeAnalytics/urbanfootprint/pull/2)
 
 ---
 
